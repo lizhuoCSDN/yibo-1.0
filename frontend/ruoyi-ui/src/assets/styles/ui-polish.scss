@@ -1,0 +1,179 @@
+/**
+ * 全局视觉优化：主内容区、列表页、表格、弹窗、标签页
+ * 在 yibo-globals 之后加载
+ */
+
+:root {
+  --yibo-page-bg: #f0f2f5;
+  --yibo-surface: #ffffff;
+  --yibo-radius: 8px;
+  --yibo-radius-lg: 10px;
+  --yibo-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --yibo-shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.1);
+  --yibo-border: 1px solid #e4e7ed;
+}
+
+/* 主滚动区域背景 */
+.app-main {
+  background-color: var(--yibo-page-bg);
+  background-image: linear-gradient(180deg, #e4e8ee 0%, #f0f2f5 18%, #f5f7fa 100%);
+}
+
+/* 常规 CRUD 页容器 */
+.app-container {
+  padding: 20px 22px 32px;
+  min-height: calc(100vh - 96px);
+  box-sizing: border-box;
+  background: transparent;
+}
+
+/* 列表页首行搜索区：白底卡片（排除新户/线路分配/导入等自有布局） */
+.app-container:not(.nu-page):not(.import-page) > .el-form.el-form--inline:first-of-type {
+  background: var(--yibo-surface);
+  border-radius: var(--yibo-radius);
+  padding: 16px 18px 6px;
+  margin-bottom: 16px;
+  box-shadow: var(--yibo-shadow);
+  border: 1px solid #ebeef5;
+}
+
+/* 数据表格（不用 overflow:hidden，避免与固定列、合计行冲突；圆角由边框和阴影表现） */
+.app-container .el-table {
+  font-size: 13px;
+  box-shadow: var(--yibo-shadow);
+  border-radius: var(--yibo-radius);
+}
+
+.app-container .el-table th.el-table__cell {
+  background-color: #f4f6f9 !important;
+  color: #303133;
+  font-weight: 600;
+}
+
+.app-container .el-table--striped .el-table__body tr.el-table__row--striped td {
+  background: #fafbfc;
+}
+
+.app-container .el-table__body tr.hover-row > td,
+.app-container .el-table__body tr:hover > td {
+  background-color: #f0f7ff !important;
+}
+
+/* 操作按钮行 */
+.app-container .mb8 {
+  margin-bottom: 12px !important;
+}
+
+/* 底部分页 */
+.pagination-container {
+  margin-top: 20px;
+  padding: 8px 4px 0;
+}
+
+/* 弹窗 */
+.el-dialog {
+  border-radius: var(--yibo-radius-lg) !important;
+  box-shadow: var(--yibo-shadow-lg) !important;
+  overflow: hidden;
+}
+
+.el-dialog__header {
+  border-bottom: 1px solid #f0f0f0;
+  padding: 16px 20px 12px;
+}
+
+.el-dialog__title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #303133;
+}
+
+.el-dialog__body {
+  padding: 20px 20px 4px;
+}
+
+.el-dialog__footer {
+  border-top: 1px solid #f0f0f0;
+  padding: 12px 20px 16px;
+}
+
+/* 页签 */
+.el-tabs--border-card {
+  border-radius: var(--yibo-radius);
+  overflow: hidden;
+  box-shadow: var(--yibo-shadow);
+  border: 1px solid #e4e7ed;
+}
+
+.el-tabs--border-card > .el-tabs__header {
+  background: #f8f9fb;
+  border-bottom-color: #ebeef5;
+}
+
+.el-tabs--border-card > .el-tabs__item.is-active {
+  font-weight: 600;
+}
+
+/* 普通 tabs 底线 */
+.el-tabs__nav-wrap::after {
+  height: 1px;
+  background: #e4e7ed;
+}
+
+/* 卡片 */
+.el-card {
+  border-radius: var(--yibo-radius);
+  border: 1px solid #ebeef5;
+  box-shadow: var(--yibo-shadow);
+}
+
+.el-card__header {
+  font-weight: 600;
+  color: #303133;
+  border-bottom-color: #f0f0f0;
+  padding: 14px 18px 12px;
+}
+
+/* 表单 label 与全局 label 重粗体 */
+#app .el-form-item__label {
+  font-weight: 500;
+  color: #5a5e66;
+}
+
+/* 说明列表 */
+#app .el-descriptions--small.is-bordered .el-descriptions-item__label {
+  font-weight: 500;
+  background: #fafbfc;
+}
+
+#app .el-descriptions--small .el-descriptions-item__content {
+  color: #303133;
+}
+
+/* 单选/多选/开关 */
+#app .el-checkbox__label,
+#app .el-radio__label {
+  font-weight: 400;
+  color: #606266;
+}
+
+/* 次按钮统一略柔和 */
+#app .el-button--default {
+  font-weight: 400;
+}
+
+/* 空状态 */
+#app .el-empty {
+  padding: 24px 0;
+}
+
+/* 时间线、折叠面板小优化 */
+#app .el-collapse-item__header {
+  font-weight: 500;
+  color: #303133;
+}
+
+/* 侧栏阴影略收一点，不抢主区 */
+#app .sidebar-container {
+  box-shadow: 2px 0 12px rgba(0, 21, 41, 0.1);
+}

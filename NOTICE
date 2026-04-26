@@ -1,0 +1,8 @@
+第三方开源基座
+----------------
+本工程后端与前端在开发早期使用了 RuoYi-Vue 项目（MIT License，见 backend/RuoYi-Vue/LICENSE）。
+依据 MIT 第 1、2 条，若再分发本软件，须在副本中保留 RuoYi 的版权声明与许可全文。
+
+在以上基座上增加了短信/CRM 等自有业务代码；产品对外展示为「短信CRM / Yibo」，不再使用「若依」作为产品名称。包名、配置前缀中仍可见历史标识（如 com.ruoyi、ruoyi.*），仅用于降低重构风险，不表示与 RuoYi 项目存在从属或官方开发关系。
+
+为降低误导入导致的菜单回退风险：业务链 `database/scripts/install_all_business_menus.sh` 跑完后会**自动**做菜单只读门禁（`verify_yibo_menu_sanity.sql`），不 **PASS** 会非 0 退出。另可单独跑 `scripts/verify-yibo-menu-sanity.sh`、全量体检 `scripts/yibo-drift-audit.sh`，说明见 `docs/数据与发版防回退.md`。

@@ -1,0 +1,35 @@
+# Maven
+**/target/
+
+# Node / Vue（子目录另有 .gitignore，此处保证根仓库不误提交依赖）
+**/node_modules/
+**/node_modules/.cache/
+frontend/ruoyi-ui/dist/
+
+# Redis 误落在项目根目录的持久化文件
+dump.rdb
+
+# IDE / OS
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Local MySQL password (optional; used by scripts/run-backend.ps1)
+db-password.local
+
+# 勿将全量 mysqldump 提交进库（会覆盖菜单/把旧数据「复活」）；允许保留空目录标记
+database/dumps/*.sql
+!database/dumps/.gitkeep
+
+# Root-level noise (logs / caches; canonical DB dumps live under database/dumps/)
+*.zip
+manual_code/
+npm_dev_output.txt
+installed_servers_cache.json
+market_servers_cache.json
+/local-*.sql

@@ -1,0 +1,36 @@
+/**
+ * YiBo 通用样式库
+ */
+
+/* YiBo主题颜色 */
+$yibo-primary: #409eff;
+$yibo-success: #67c23a;
+$yibo-warning: #e6a23c;
+$yibo-danger: #f56c6c;
+$yibo-info: #909399;
+
+/* YiBo 自定义样式 */
+.yibo-container {
+  padding: 20px;
+}
+
+.yibo-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.yibo-card {
+  padding: 20px;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 12px #e6e6e6;
+  margin-bottom: 20px;
+}
+
+/* 主内容区浅底，与白色卡片/表格区分（在 index.scss 的 .app-container 之后加载） */
+.app-container {
+  background: #f5f7fa;
+  box-sizing: border-box;
+}

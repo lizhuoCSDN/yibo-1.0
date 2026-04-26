@@ -1,0 +1,3 @@
+-- 可选：加速「消费明细」按时间筛选、以及利润按时间段汇总（sms_balance_log）
+-- 若已存在同名索引会报错，可忽略或改名后执行
+-- ALTER TABLE sms_balance_log ADD INDEX idx_log_ctype_time_user (change_type, create_time, user_id);
